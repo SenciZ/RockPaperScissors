@@ -1,0 +1,40 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: cadetblue;
+    box-sizing: border-box;
+}
+.container{
+    display:flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+
+}
+.score{
+    margin: 5vh;
+}
+
+.buttonContainer{
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.gameWinner{
+    font-weight: 800;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: rgb(255, 238, 0);
+    height: 30px;
+    text-shadow: rgba(1, 12, 46, 100) 2px 2px 5px;
+}
+
+.gamecount{
+    font-size: 40px;
+    font-weight:900;
+    text-transform: uppercase;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: rgb(255, 255, 255);
+    height: 100px;
+    padding: 20px;
+}
