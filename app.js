@@ -1,8 +1,6 @@
 let playerWins = 0;
 let computerWins = 0;
 
-
-
 const buttonClicked = document.querySelectorAll("button");
 buttonClicked.forEach(buttonClicked  => {
     buttonClicked.addEventListener("click", (e) => {
@@ -21,47 +19,45 @@ function computerPlay(){
     return rpsChoice[randomNumber];
 }
 
-
-
 function playRound(playerSelection, computerPlay){
-    let gameWinner = document.querySelector(".gameWinner");
+    let gameLogger = document.querySelector(".gameLogger");
+
     if (playerSelection === "rock" && computerPlay === "scissors"){
         playerWins++
-        gameWinner.textContent = "You Win! Rock beats Scissors";
+        gameLogger.textContent = "You Win! Rock beats Scissors";
     } else if (playerSelection === "paper" && computerPlay === "rock"){
         playerWins++
-        gameWinner.textContent = "You Win! Paper beats Rock!";
+        gameLogger.textContent = "You Win! Paper beats Rock!";
     } else if (playerSelection === "scissors" && computerPlay === "paper"){
         playerWins++
-        gameWinner.textContent = "You Win! Scissors beats Paper!";
+        gameLogger.textContent = "You Win! Scissors beats Paper!";
     } else if (computerPlay === "scissors" && playerSelection === "paper"){
         computerWins++
-        gameWinner.textContent = "You Lose! Scissors beats Paper!";
+        gameLogger.textContent = "You Lose! Scissors beats Paper!";
     } else if (computerPlay === "paper" && playerSelection === "rock"){
         computerWins++
-        gameWinner.textContent = "You Lose! Paper beats Rock!";
+        gameLogger.textContent = "You Lose! Paper beats Rock!";
     } else if (computerPlay === "rock" && playerSelection === "scissors"){
         computerWins++
-        gameWinner.textContent = "You Lose! Rock beats Scissors";
+        gameLogger.textContent = "You Lose! Rock beats Scissors";
     } else {
-        gameWinner.textContent = "Its a Draw!";
+        gameLogger.textContent = "Its a Draw!";
     }
+    gameKeeper();
 }
 
-
 function finalScore(){
-    let gameCounter = document.querySelector(".gamecount");
-
+    let gameWinner = document.querySelector(".gameWinner");
     if (playerWins > computerWins){
-        gameCounter.textContent = "You Win!";
+        gameWinner.textContent = "You Win!";
         disableButtons();
 
     } else if (playerWins<computerWins){
-        gameCounter.textContent = "Computer Wins!";
+        gameWinner.textContent = "Computer Wins!";
         disableButtons();
 
     } else if (playerWins === computerWins){
-        gameCounter.textContent = "Its a Tie!";
+        gameWinner.textContent = "Its a Tie!";
         disableButtons();
     }  
 }
@@ -72,4 +68,10 @@ function disableButtons() {
     });
 }
 
+function gameKeeper(){
+    let userScoreNumber = document.querySelector(".userScoreNumber");
+    let computerScoreNumber = document.querySelector(".computerScoreNumber");
+    userScoreNumber.textContent = `${playerWins}`;
+    computerScoreNumber.textContent = `${computerWins}`;
+}
 

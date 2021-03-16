@@ -19,9 +19,10 @@ body{
 .buttonContainer{
     flex-wrap: wrap;
     flex-direction: column;
+    margin-top: 20px;
 }
 
-.gameWinner{
+.gameLogger{
     font-weight: 800;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     color: rgb(255, 238, 0);
@@ -29,7 +30,7 @@ body{
     text-shadow: rgba(1, 12, 46, 100) 2px 2px 5px;
 }
 
-.gamecount{
+.gameWinner{
     font-size: 40px;
     font-weight:900;
     text-transform: uppercase;
@@ -37,4 +38,37 @@ body{
     color: rgb(255, 255, 255);
     height: 100px;
     padding: 20px;
+}
+
+.scoreCounter {
+    color: white;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-weight: 900;
+    display: inline-flex;
+}
+
+.userScore {
+    margin: 20px;
+
+}
+
+.computerScore {
+    margin: 20px;
+
+}
+
+button {
+    background-color: rgb(5, 53, 143);
+    outline: none;
+    border: none;
+    color: white;
+    padding: 10px;
+    width: 8rem;
+    border-radius: 8px;
+    text-transform: uppercase;
+}
+
+button:hover {
+    background-color: rgb(24, 76, 172);
+
 }
